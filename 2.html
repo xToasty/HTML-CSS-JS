@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html>
+
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!--Кодировка-->
+  
+</head>
+
+<title>Практика</title><!--Зашоловок сайта-->
+
+<body bgcolor="#b7f3а5">
+
+<!--Открытые библиотеки open source-->
+<script src="https://cdn.jsdelivr.net/gh/pkoretic/pdf417-generator@master/lib/libbcmath.js " type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/pkoretic/pdf417-generator@master/lib/bcmath.js" type="text/javascript"></script>
+<script src="/run/media/student/CCCOMA_X64F/GITHUB/HTML/3.html"></script>
+
+
+
+<form name="test" align="center" action="2.html">
+
+<h1>Практика HTML+CSS+JS</h1>
+
+<p><b>Введите число:</b><br>
+
+<input type="text" id="in">
+
+<button type="reset" onclick="generate();">Сгенерировать</button>
+
+<button onclick="alert('Очистка');" >Очистить</button>
+
+
+
+
+<p><canvas id="barcode" "></canvas></p> <!--Для создания рисунка-->
+</form>
+
+<p><em>Инструкция:</em></p>
+<ol>
+<li>Сгенерировать код</li>
+<li>Скачать Google pay</li>
+<li>Перейти в раздел карты</li>
+<li>Нажать на кнопку добавить карту. В списке выбрать программу лояльности</li>
+<li>В предложенных вариантах выбрать сеть магазинов Prisma</li>
+<li>Отсканировать штрихкод</li>
+</ol>
+
+  <script type="text/javascript"> <!--пределяет тип содержимого тега script-->
+  
+function generate () { <!--Функция для кнопки генерации-->
+var newDiv = document.createElement("div"); 
+ var input = document.getElementById("in").value;<!--Получаем элемент по id-->
+ if (input !== undefined) {
+        var code = input;
+        alert('Генерация PDF417'); <!--Для всплывющего окна-->
+ }
+var canvas = document.getElementById("barcode")
+PDF417.draw(code, canvas)
+}
+ </script>
+ 
+</body>
+
+</html>
